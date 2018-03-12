@@ -191,7 +191,7 @@ def train_neural_network(x):
 # Run this locally:
 train_neural_network(x)
 
-## Writes Result to "Outputput.csv"
+# Writes Result to csv
 a= pd.DataFrame(Result,columns=['id','cancer','result'])
 print(a)
 a.to_csv('D:/final/Result_images.csv')
