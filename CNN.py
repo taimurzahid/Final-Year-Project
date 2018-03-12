@@ -69,7 +69,7 @@ def convolutional_neural_network(x):
     #print('Shape of conv1_4 after maxpool', conv1_4.get_shape())
    
     
-    fc = tf.reshape(conv1_3, [-1, 409600]) #262144 #Reshape from [BATCH_SIZE,512,512] to [BATCH_SIZE, 512*512]
+    fc = tf.reshape(conv1_3, [-1, 409600]) #262144 #Reshape from [BATCH_SIZE,a,b] to [BATCH_SIZE, a*b]
     print('Shape of conv1_4 after reshape', fc.get_shape())    
     fc = tf.nn.relu(tf.matmul(fc, weights['Weights_fully_connected']) + biases['Bias_fully_connected'])
     fc = tf.nn.dropOutput(fc, keep_rate)
