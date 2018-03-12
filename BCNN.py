@@ -126,7 +126,7 @@ def convolutional_neural_network(x):
     #transpose_a = False, transpose_b = False, adjoint_a = False, 
     #adjoint_b = False, a_is_sparse = False, b_is_sparse = False,name = None
     
-    fc = tf.reshape(convFinal,[-1, 11239424]) #262144 #Reshape from [BATCH_SIZE,512,512] to [BATCH_SIZE, 512*512]
+    fc = tf.reshape(convFinal,[-1, 11239424]) #262144 #Reshape from [BATCH_SIZE,a,b] to [BATCH_SIZE, a*b]
     print('Shape of convFinal after reshape', convFinal.get_shape())    
     fc = tf.nn.relu(tf.matmul(fc, weights['Weights_fully_connected']) + biases['Bias_fully_connected'])
     fc = tf.nn.dropout(fc, keep_rate)
